@@ -7,37 +7,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#f7f7fb;
-      --card:#ffffff;
-      --accent:#6b21a8; /* purple */
-      --muted:#6b7280;
+      --bg:#0d0d0d;
+      --card:#1a1a1a;
+      --accent:#ff7a00; /* برتقالي */
+      --text:#f2f2f2;
+      --muted:#b0b0b0;
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:'Cairo',system-ui,rem;background:var(--bg);color:#111}
+    html,body{height:100%;margin:0;font-family:'Cairo',system-ui,rem;background:var(--bg);color:var(--text)}
     .container{max-width:1100px;margin:32px auto;padding:20px}
 
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #222;padding-bottom:12px}
     .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(99,102,241,0.12)}
-    h1{margin:0;font-size:28px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ffb84d);display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:20px;box-shadow:0 6px 18px rgba(255,122,0,0.25)}
+    h1{margin:0;font-size:28px;color:var(--accent)}
     .tag{color:var(--muted);font-size:14px}
 
-    .hero{margin-top:18px;background:linear-gradient(180deg,rgba(106,90,205,0.06),transparent);padding:18px;border-radius:12px}
+    .hero{margin-top:18px;background:linear-gradient(180deg,rgba(255,122,0,0.08),transparent);padding:18px;border-radius:12px}
     .hero-grid{display:flex;gap:16px;align-items:center;justify-content:space-between}
-    .hero-text h2{margin:0;font-size:20px}
+    .hero-text h2{margin:0;font-size:22px;color:var(--accent)}
     .hero-text p{margin:6px 0 0;color:var(--muted)}
 
     .products{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
-    .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(15,23,42,0.06);display:flex;flex-direction:column;gap:10px;transition:transform .18s ease,box-shadow .18s ease}
-    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,23,42,0.08)}
-    .card img{width:100%;height:150px;object-fit:cover;border-radius:10px}
+    .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(255,122,0,0.1);display:flex;flex-direction:column;gap:10px;transition:transform .18s ease,box-shadow .18s ease}
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(255,122,0,0.25)}
+    .card img{width:100%;height:150px;object-fit:cover;border-radius:10px;filter:brightness(0.9)}
     .meta{display:flex;align-items:center;justify-content:space-between}
-    .meta h3{margin:0;font-size:16px}
+    .meta h3{margin:0;font-size:16px;color:var(--text)}
     .price{font-weight:700;color:var(--accent)}
     .desc{color:var(--muted);font-size:13px}
-    .btn{padding:10px 12px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:600;cursor:pointer}
+    .btn{padding:10px 12px;border-radius:10px;border:0;background:var(--accent);color:#000;font-weight:700;cursor:pointer;transition:all .2s ease}
+    .btn:hover{background:#ffa64d}
 
-    footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted);font-size:13px}
+    footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid #222}
 
     @media (max-width:600px){
       header{flex-direction:column;align-items:flex-start}
@@ -67,13 +69,13 @@
           <p>تصفح تشكيلتنا المختارة من المشروبات والحلويات — جودة ومذاق يسرّ القلب.</p>
         </div>
         <div>
-          <strong>توصيل سريع</strong>
+          <strong style="color:var(--accent)">توصيل سريع</strong>
           <div class="tag">خدمة الدفع عند الاستلام متاحة</div>
         </div>
       </div>
     </section>
 
-    <h2 style="margin-top:22px">منتجاتنا</h2>
+    <h2 style="margin-top:22px;color:var(--accent)">منتجاتنا</h2>
     <div class="products">
       <article class="card"><img src="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?auto=format&fit=crop&w=800&q=60" alt="شاي"><div class="meta"><h3>شاي</h3><div class="price">5.00 لِـ</div></div><p class="desc">شاي دافئ بنكهات متعددة.</p><button class="btn">أضف إلى السلة</button></article>
       <article class="card"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=60" alt="قهوة سريعة"><div class="meta"><h3>قهوة سريعة</h3><div class="price">6.00 لِـ</div></div><p class="desc">قهوة سريعة التحضير بطعم غني ومركز.</p><button class="btn">أضف إلى السلة</button></article>
@@ -93,7 +95,7 @@
     </div>
 
     <footer>
-      © <strong>NOVA</strong> — جميع الحقوق محفوظة
+      © <strong style="color:var(--accent)">NOVA</strong> — جميع الحقوق محفوظة
     </footer>
   </div>
 </body>
